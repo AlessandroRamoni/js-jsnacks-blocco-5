@@ -53,9 +53,9 @@ const teams = [
 ];
 
 teams.forEach((element) => {
-  element.puntiFatti = getRandomNumber(1, 5);
+  element.puntiFatti = getRandomNumber(1, 10);
 
-  element.falliSubiti = getRandomNumber(1, 5);
+  element.falliSubiti = getRandomNumber(1, 10);
 
   console.log(element);
 });
@@ -78,8 +78,17 @@ function createNewArray(arr, num1, num2) {
   let arrayAppoggio = [];
 
   if (num1 < num2) {
-    arr.forEach((number) => {
-      if (number > num1 && number < num2) {
+    arr.forEach((number, index) => {
+      console.log(index);
+      if (index > num1 && index < num2) {
+        arrayAppoggio.push(number);
+      }
+    });
+    return arrayAppoggio;
+  } else {
+    arr.forEach((number, index) => {
+      console.log(index);
+      if (index > num2 && index < num1) {
         arrayAppoggio.push(number);
       }
     });
@@ -88,7 +97,7 @@ function createNewArray(arr, num1, num2) {
 }
 
 const array = [2, 5, 7, 4, 6, 8, 20, 50, 35];
-console.log(createNewArray(array, 1, 21));
+console.log(createNewArray(array, 2, 8));
 
 /*
  * Crea 10 oggetti che rappresentano una zucchina.
