@@ -38,27 +38,99 @@ const teams = [
   {
     nome: "Juventus",
     puntiFatti: 0,
-    falliSubiti: 0,
+    golFatti: 0,
+    golSubiti: 0,
   },
   {
-    nome: "Milan",
+    nome: "PSV",
     puntiFatti: 0,
-    falliSubiti: 0,
+    golFatti: 0,
+    golSubiti: 0,
   },
   {
-    nome: "Benevento",
+    nome: "Rotterdam",
     puntiFatti: 0,
-    falliSubiti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Twente",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Alkmaar",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Den Haag",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Feyenord",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Ajax",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Vitesse",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Utrecth",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Venlo",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
+  },
+  {
+    nome: "Breda",
+    puntiFatti: 0,
+    golFatti: 0,
+    golSubiti: 0,
   },
 ];
 
-teams.forEach((element) => {
-  element.puntiFatti = getRandomNumber(1, 10);
+const pari = [];
+const dispari = [];
 
-  element.falliSubiti = getRandomNumber(1, 10);
+teams.forEach((squadra, index) => {
+  squadra.puntiFatti = getRandomNumber(1, 10);
+  squadra.golFatti = getRandomNumber(1, 10);
 
-  console.log(element);
+  ////////// vorrei dividere in due array le squadre in base al loro indice, pari o dispari, ma mi genera per ogni squadra un array di lunghezza 1
+
+  if (index % 2 === 0) {
+    pari.push(squadra);
+  } else {
+    dispari.push(squadra);
+  }
+  // console.log(squadra.nome);
+  //   console.log(squadra);
+  // console.log(
+  //   `${squadra.nome}, dopo due giornate ha segnato ${squadra.golFatti}`
+  // );
 });
+console.log(pari);
+console.log(dispari);
 
 function getRandomNumber(min, max) {
   const range = max - min + 1;
@@ -79,7 +151,7 @@ function createNewArray(arr, num1, num2) {
 
   if (num1 < num2) {
     arr.forEach((number, index) => {
-      console.log(index);
+      // console.log(index);
       if (index > num1 && index < num2) {
         arrayAppoggio.push(number);
       }
@@ -87,7 +159,7 @@ function createNewArray(arr, num1, num2) {
     return arrayAppoggio;
   } else {
     arr.forEach((number, index) => {
-      console.log(index);
+      // console.log(index);
       if (index > num2 && index < num1) {
         arrayAppoggio.push(number);
       }
@@ -97,7 +169,7 @@ function createNewArray(arr, num1, num2) {
 }
 
 const array = [2, 5, 7, 4, 6, 8, 20, 50, 35];
-console.log(createNewArray(array, 2, 8));
+// console.log(createNewArray(array, 2, 8));
 
 /*
  * Crea 10 oggetti che rappresentano una zucchina.
@@ -158,19 +230,21 @@ let totalePesoZucchineBig = 0;
 zucchine.forEach((element) => {
   if (element.lunghezza < 15) {
     zucchineSmall.push(element);
+
     totalePesoZucchineSmall += element.peso;
   } else {
     zucchineBig.push(element);
     totalePesoZucchineBig += element.peso;
   }
 });
-console.log(zucchineSmall, zucchineBig);
-console.log(
-  "peso zucchine small: ",
-  totalePesoZucchineSmall,
-  "peso zucchine big: ",
-  totalePesoZucchineBig
-);
+console.log(zucchineSmall);
+// console.log(zucchineSmall, zucchineBig);
+// console.log(
+//   "peso zucchine small: ",
+//   totalePesoZucchineSmall,
+//   "peso zucchine big: ",
+//   totalePesoZucchineBig
+// );
 
 /*
 const zucchina = {
